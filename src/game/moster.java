@@ -21,22 +21,22 @@ public class moster {
 	public static Random random = new Random();
 	public moster(String map) {
 		if(map.equals("1")){
-			
+			init_moster(1);
 		}
 		else if(map.equals("2")){
-			
+			init_moster(2);
 		}
 		else if(map.equals("3")){
-			
+			init_moster(3);
 		}
 		else if(map.equals("4")){
-			
+			init_moster(4);
 		}
 		else if(map.equals("5")){
-			
+			init_moster(5);
 		}
 		else if(map.equals("6")){
-			
+			init_moster(6);
 		}
 	}
 	
