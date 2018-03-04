@@ -17,38 +17,31 @@ public class person {
 	private String name;// 玩家名字
 	private String pro;//职业
 	private int is_alive;/* 设置存活状态 1活 0死 */
-	private int sign;// 设置标识符1玩家 ；2怪物；3；装备
-	private String player;// 玩家职业标识符；1；战士；2法师；3盗贼；4；牧师
-
-	public person(int sign, String player) {
-		this.sign = sign;
+	private String player;// 玩家职业标识符；1；战士；2法师；3盗贼；4；牧师 , 0为怪物
+	
+	
+	public person(String player) {
 		this.player = player;
-		if (sign == 1) {
-			if (player.equals("1")) {
-				setPro("战士");
-				init_fuck(7, 3, 3, 7);
-				init_person();
-			} else if (player.equals("2")) {
-				setPro("法师");
-				init_fuck(7, 3, 3, 7);
-				init_person();
-			} else if (player.equals("3")) {
-				setPro("盗贼");
-				init_fuck(7, 3, 3, 7);
-				init_person();
-			} else if (player.equals("4")) {
-				setPro("牧师");
-				init_fuck(100, 3, 3, 200);
-				init_person();
-			} else {
-				System.out.println("初始化职业失败");
-			}
-			init();
-
+		if (player.equals("1")) {
+			setPro("战士");
+			init_fuck(7, 3, 3, 7);
+			init_person();
+		} else if (player.equals("2")) {
+			setPro("法师");
+			init_fuck(7, 3, 3, 7);
+			init_person();
+		} else if (player.equals("3")) {
+			setPro("盗贼");
+			init_fuck(7, 3, 3, 7);
+			init_person();
+		} else if (player.equals("4")) {
+			setPro("牧师");
+			init_fuck(100, 3, 3, 200);
+			init_person();
+		} else {
+			System.out.println("初始化职业失败");
 		}
-		else if (sign == 2){ //moster
-			
-		}
+		init();
 	}
 
 	public void init_fuck(int power, int quick, int brain, int spirit) {
@@ -115,13 +108,6 @@ public class person {
 		this.player = player;
 	}
 
-	public int getSign() {
-		return sign;
-	}
-
-	public void setSign(int sign) {
-		this.sign = sign;
-	}
 
 	public int getHp() {
 		return Hp;

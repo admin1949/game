@@ -13,6 +13,6 @@ public class game {
 		System.out.println("欢迎" + id + "进入勇者的世界");
 		System.out.println("请选择你的职业：\t1.战士\t2.法师\t3.盗贼\t4.牧师");
 		String player=in.next();
-		my=new person(1,player);
+		my=new person(player);
 	}
 }
