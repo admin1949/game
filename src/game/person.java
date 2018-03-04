@@ -14,12 +14,13 @@ public class person {
 	private int Exp;// 经验值
 	private int Exp_max;// 经验上限
 	private int gold;/* 金币数量 */
-	private String name;// 玩家职业
+	private String name;// 玩家名字
+	private String pro;//职业
 	private int is_alive;/* 设置存活状态 1活 0死 */
 	private int sign;// 设置标识符1玩家 ；2怪物；3；装备
-	private int player;// 玩家职业标识符；1；战士；2法师；3盗贼；4；牧师
+	private String player;// 玩家职业标识符；1；战士；2法师；3盗贼；4；牧师
 
-	public person(int sign, int player) {
+	public person(int sign, String player) {
 		this.sign = sign;
 		this.player = player;
 		if (sign == 1) {
@@ -31,18 +32,22 @@ public class person {
 			setLv(1);
 			setMp(20);
 			setMp_max(20);
-			if (player == 1) {
+			if (player.equals("1")) {
 				setName("战士");
-				init_person(7, 3, 3, 7);
-			} else if (player == 2) {
+				init_fuck(7, 3, 3, 7);
+				init_person();
+			} else if (player.equals("2")) {
 				setName("法师");
-				init_person(7, 3, 3, 7);
-			} else if (player == 3) {
+				init_fuck(7, 3, 3, 7);
+				init_person();
+			} else if (player.equals("3")) {
 				setName("盗贼");
-				init_person(7, 3, 3, 7);
-			} else if (player == 4) {
+				init_fuck(7, 3, 3, 7);
+				init_person();
+			} else if (player.equals("4")) {
 				setName("牧师");
-				init_person(100, 3, 3, 200);
+				init_fuck(100, 3, 3, 200);
+				init_person();
 			} else {
 				System.out.println("初始化职业失败");
 			}
@@ -50,11 +55,34 @@ public class person {
 		}
 	}
 
-	public void init_person(int power, int quick, int brain, int spirit) {
+	public void init_fuck(int power, int quick, int brain, int spirit) {
 		setPower(power);
 		setQuick(quick);
 		setBrain(brain);
 		setSpirit(spirit);
+	}
+	
+	public void init_person(){
+		if(getPro().equals("法师")){
+			setAtk((int)(getBrain()*2+getPower()*0.2));
+			setHp((int)(getSpirit()*10+getBrain()*2));
+			setMp((int)(getBrain()*2));
+		}
+		else if(getPro().equals("战士")){
+			setAtk((int)(getPower()*2+getQuick()*0.2));
+			setHp((int)(getSpirit()*10+getPower()*2));
+			setMp((int)(getBrain()*2));
+		}
+		else if(getPro().equals("盗贼")){
+			setAtk((int)(getQuick()*2+getBrain()*0.2));
+			setHp((int)(getSpirit()*10+getQuick()*2));
+			setMp((int)(getBrain()*2));
+		}
+		else if(getPro().equals("牧师")){
+			setAtk((int)(getBrain()*2+getQuick()*0.2));
+			setHp((int)(getSpirit()*10+getBrain()*2));
+			setMp((int)(getBrain()*2));
+		}
 	}
 
 	public int getAtk() {
@@ -192,5 +220,14 @@ public class person {
 	public void setIs_alive(int is_alive) {
 		this.is_alive = is_alive;
 	}
+
+	public String getPro() {
+		return pro;
+	}
+
+	public void setPro(String pro) {
+		this.pro = pro;
+	}
+	
 
 }
