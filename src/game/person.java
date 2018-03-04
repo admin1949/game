@@ -33,56 +33,67 @@ public class person {
 			setMp(20);
 			setMp_max(20);
 			if (player.equals("1")) {
-				setName("战士");
+				setPro("战士");
 				init_fuck(7, 3, 3, 7);
 				init_person();
 			} else if (player.equals("2")) {
-				setName("法师");
+				setPro("法师");
 				init_fuck(7, 3, 3, 7);
 				init_person();
 			} else if (player.equals("3")) {
-				setName("盗贼");
+				setPro("盗贼");
 				init_fuck(7, 3, 3, 7);
 				init_person();
 			} else if (player.equals("4")) {
-				setName("牧师");
+				setPro("牧师");
 				init_fuck(100, 3, 3, 200);
 				init_person();
 			} else {
 				System.out.println("初始化职业失败");
 			}
+			init();
 
+		}
+		else if (sign == 2){ //moster
+			
 		}
 	}
 
 	public void init_fuck(int power, int quick, int brain, int spirit) {
 		setPower(power);
-		setQuick(quick);
+		setQuick(quick);       // 根据职业设定属性
 		setBrain(brain);
 		setSpirit(spirit);
 	}
 	
-	public void init_person(){
+	public void init_person(){   //根据属性和职业设定具体属性
 		if(getPro().equals("法师")){
 			setAtk((int)(getBrain()*2+getPower()*0.2));
-			setHp((int)(getSpirit()*10+getBrain()*2));
-			setMp((int)(getBrain()*2));
+			setHp_max((int)(getSpirit()*10+getBrain()*2));
+			setMp_max((int)(getBrain()*2));
 		}
 		else if(getPro().equals("战士")){
 			setAtk((int)(getPower()*2+getQuick()*0.2));
-			setHp((int)(getSpirit()*10+getPower()*2));
-			setMp((int)(getBrain()*2));
+			setHp_max((int)(getSpirit()*10+getPower()*2));
+			setMp_max((int)(getBrain()*2));
 		}
 		else if(getPro().equals("盗贼")){
 			setAtk((int)(getQuick()*2+getBrain()*0.2));
-			setHp((int)(getSpirit()*10+getQuick()*2));
-			setMp((int)(getBrain()*2));
+			setHp_max((int)(getSpirit()*10+getQuick()*2));
+			setMp_max((int)(getBrain()*2));
 		}
 		else if(getPro().equals("牧师")){
 			setAtk((int)(getBrain()*2+getQuick()*0.2));
-			setHp((int)(getSpirit()*10+getBrain()*2));
-			setMp((int)(getBrain()*2));
+			setHp_max((int)(getSpirit()*10+getBrain()*2));
+			setMp_max((int)(getBrain()*2));
 		}
+	}
+	
+	public void init(){
+		setHp(getHp_max());
+		setMp(getMp_max());
+		setIs_alive(1);
+		setGold(0);
 	}
 
 	public int getAtk() {
