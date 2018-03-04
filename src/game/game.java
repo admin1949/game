@@ -14,6 +14,5 @@ public class game {
 		System.out.println("请选择你的职业：\t1.战士\t2.法师\t3.盗贼\t4.牧师");
 		String player=in.next();
 		my=new person(1,player);
-		int a;
 	}
 }
