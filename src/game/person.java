@@ -1,10 +1,19 @@
 package game;
 
 public class person {
-	int Hp;//è¡€é‡
-	int Mp;//è“é‡
-	int Power;//åŠ›é‡
-	int Quick;//æ•æ·
-	int Brain;//æ™ºåŠ›
-	int Spirit;//ä½“åŠ›
+	int Hp;//ÑªÁ¿
+	int Hp_max;/*ÑªÁ¿ÉÏÏŞ*/
+	int Mp;//À¶Á¿
+	int Mp_max;//À¶Á¿ÉÏÏŞ
+	int Power;//Á¦Á¿
+	int Quick;//Ãô½İ
+	int Brain;//ÖÇÁ¦
+	int Spirit;//ÌåÁ¦
+	int Lv;//µÈ¼¶
+	int Exp;//¾­ÑéÖµ
+	int Exp_max;//¾­ÑéÉÏÏŞ
+	int gold;/*½ğ±ÒÊıÁ¿*/
+	int is_alive;/*ÉèÖÃ´æ»î×´Ì¬ 1»î 0ËÀ*/
+	
+	
 }
