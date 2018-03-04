@@ -24,14 +24,6 @@ public class person {
 		this.sign = sign;
 		this.player = player;
 		if (sign == 1) {
-			setHp(80);
-			setExp(0);
-			setExp_max(50);
-			setIs_alive(1);
-			setGold(0);
-			setLv(1);
-			setMp(20);
-			setMp_max(20);
 			if (player.equals("1")) {
 				setPro("սʿ");
 				init_fuck(7, 3, 3, 7);
@@ -94,6 +86,9 @@ public class person {
 		setMp(getMp_max());
 		setIs_alive(1);
 		setGold(0);
+		setExp(0);
+		setExp_max(50);
+		setLv(1);
 	}
 
 	public int getAtk() {
