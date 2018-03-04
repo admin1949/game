@@ -28,15 +28,15 @@ public class person {
 			init_person();
 		} else if (player.equals("2")) {
 			setPro("法师");
-			init_fuck(7, 3, 3, 7);
+			init_fuck(3,5,7,5);
 			init_person();
 		} else if (player.equals("3")) {
 			setPro("盗贼");
-			init_fuck(7, 3, 3, 7);
+			init_fuck(4,8,6,2);
 			init_person();
 		} else if (player.equals("4")) {
 			setPro("牧师");
-			init_fuck(100, 3, 3, 200);
+			init_fuck(100, 100, 100, 200);
 			init_person();
 		} else {
 			System.out.println("初始化职业失败");
