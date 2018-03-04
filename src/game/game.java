@@ -54,8 +54,8 @@ public class game {
 		System.out.print("MP：" + my.getMp() + "/" + my.getMp_max() + "\n");
 		System.out.print("攻击：" + my.getAtk()+ "\n");
 		System.out.print("力量：" + my.getPower());
-		System.out.print("\t智力：" + my.getQuick()+ "\n");
-		System.out.print("敏捷：" + my.getBrain());
+		System.out.print("\t智力：" + my.getBrain()+ "\n");
+		System.out.print("敏捷：" + my.getQuick());
 		System.out.print("\t体力：" + my.getSpirit()+ "\n");
 		System.out.print("等级：" + my.getLv()+ "\n");
 		System.out.print("经验值：" + my.getExp() + "/" + my.getExp_max()+"\n");
