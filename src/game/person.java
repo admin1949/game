@@ -101,11 +101,11 @@ public class person {
 		this.name = name;
 	}
 
-	public int getPlayer() {
+	public String getPlayer() {
 		return player;
 	}
 
-	public void setPlayer(int player) {
+	public void setPlayer(String player) {
 		this.player = player;
 	}
 
