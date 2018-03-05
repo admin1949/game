@@ -16,6 +16,7 @@ public class moster {
 	private int gold;/* 金币数量 */
 	private String name;// 玩家名字
 	private int is_alive;/* 设置存活状态 1活 0死 */
+	private int Exp;//怪物爆的经验
 
 	
 	public static Random random = new Random();
@@ -69,6 +70,8 @@ public class moster {
 		setIs_alive(1);
 		setGold(map*(random.nextInt(5)+1)*getGrade());
 		setLv(map);
+		setExp((random.nextInt(10)+1+map*5)*getGrade());
+		
 	}
 
 
@@ -244,5 +247,14 @@ public class moster {
 	public void setIs_alive(int is_alive) {
 		this.is_alive = is_alive;
 	}
+
+	public int getExp() {
+		return Exp;
+	}
+
+	public void setExp(int exp) {
+		Exp = exp;
+	}
+	
 	
 }

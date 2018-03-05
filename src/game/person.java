@@ -18,7 +18,7 @@ public class person {
 	private String pro;//职业
 	private int is_alive;/* 设置存活状态 1活 0死 */
 	private String player;// 玩家职业标识符；1；战士；2法师；3盗贼；4；牧师 , 0为怪物
-	
+	private int point;//当前拥有技能点
 	
 	public person(String player) {
 		this.player = player;
@@ -49,6 +49,7 @@ public class person {
 		setQuick(quick);       // 根据职业设定属性
 		setBrain(brain);
 		setSpirit(spirit);
+		setPoint(0);//初始化技能点为0
 	}
 	
 	public void init_person(){   //根据属性和职业设定具体属性
@@ -233,6 +234,14 @@ public class person {
 
 	public void setPro(String pro) {
 		this.pro = pro;
+	}
+
+	public int getPoint() {
+		return point;
+	}
+
+	public void setPoint(int point) {
+		this.point = point;
 	}
 	
 
