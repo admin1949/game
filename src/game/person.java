@@ -83,6 +83,20 @@ public class person {
 		setExp_max(50);
 		setLv(1);
 	}
+	
+	public void show() {//显示人物信息
+		System.out.println("ID：" + getName()+"\t职业"+getPro());
+		System.out.print("HP：" + getHp() + "/" + getHp_max()+ "\n");
+		System.out.print("MP：" + getMp() + "/" + getMp_max() + "\n");
+		System.out.print("攻击：" + getAtk()+ "\n");
+		System.out.print("力量：" + getPower());
+		System.out.print("\t智力：" + getBrain()+ "\n");
+		System.out.print("敏捷：" + getQuick());
+		System.out.print("\t体力：" + getSpirit()+ "\n");
+		System.out.print("等级：" + getLv()+ "\n");
+		System.out.print("经验值：" + getExp() + "/" + getExp_max()+"\n");
+
+	}
 
 	public int getAtk() {
 		return atk;

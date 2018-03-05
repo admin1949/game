@@ -41,6 +41,7 @@ public class moster {
 	}
 	
 	public void init_moster(int map){
+		map=random.nextInt(5)+1+(map-1)*5;
 		double i = Math.random();
 		if(i<0.5){
 			setGrade(1);
@@ -71,7 +72,13 @@ public class moster {
 	}
 
 
-
+	public void show(){//显示怪物属性
+		System.out.println("ID：" + getName());
+		System.out.print("HP：" + getHp() + "/" + getHp_max()+ "\n");
+		System.out.print("MP：" + getMp() + "/" + getMp_max() + "\n");
+		System.out.print("攻击：" + getAtk()+ "\n");
+		System.out.print("等级：" + getLv()+ "\n");
+	} 
 	public int getGrade() {
 		return Grade;
 	}
