@@ -77,23 +77,19 @@ public class moster {
 	
 	private String re_name (int Grade){//根据品级返回怪物名
 		String name = null;
-		switch(Grade){
-			case 1:
-				name = "普通";
-			case 2:
-				name = "精英";
-			case 3:
-				name = "稀有";
-			case 4:
-				name = "史诗";
-			case 5:
-				name = "传说";
-			case 6:
-				name = "boss";
-			default:
-				name  = " ";
+		if(Grade==1){
+			name = "普通";
+		}else if(Grade==2){
+			name = "精英";
+		}else if(Grade==3){
+			name = "稀有";
+		}else if(Grade==4){
+			name = "史诗";
+		}else if(Grade==5){
+			name = "传说";
+		}else if(Grade==6){
+			name = "boss";
 		}
-			
 		return name;
 	}
 

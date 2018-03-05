@@ -19,7 +19,7 @@ public class game {
 		my.setName(id);
 		my.show();
 		int i = 0;
-		int j = my.getHp();// 当前血量
+		
 		while (true) {
 			System.out.println("请选择是否出城探险：\n1.走，我们去探险\n2.我要在城里回复血量值（回复13点，只限一次）\n3.查看当前自身状态");
 			String go = in.next();
@@ -60,8 +60,12 @@ public class game {
 				}
 				
 			} else if (go.equals("2")) {
-				if (my.getHp() >= my.getHp_max() && i < 1) {
+				if (my.getHp() <= my.getHp_max() && i == 0) {
+					int j = my.getHp();// 当前血量
 					my.setHp(my.getHp() + 13);
+					/*if(my.getHp()>=my.getHp_max()){
+						my.setHp(my.getHp_max());
+					}*///暂时回满血
 					my.setHp(my.getHp_max());
 					System.out.print("已经为您回复" + (my.getHp() - j) + "点血量值：" + j + "/" + my.getHp_max() + "->"
 							+ my.getHp() + "/" + my.getHp_max() + "\n");

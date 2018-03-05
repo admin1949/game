@@ -86,7 +86,7 @@ public class person {
 	}
 	
 	public void show() {//显示人物信息
-		System.out.println("ID：" + getName()+"\t职业"+getPro());
+		System.out.println("ID：" + getName()+"\t职业:"+getPro());
 		System.out.print("HP：" + getHp() + "/" + getHp_max()+ "\n");
 		System.out.print("MP：" + getMp() + "/" + getMp_max() + "\n");
 		System.out.print("攻击：" + getAtk()+ "\n");
@@ -96,6 +96,8 @@ public class person {
 		System.out.print("\t体力：" + getSpirit()+ "\n");
 		System.out.print("等级：" + getLv()+ "\n");
 		System.out.print("经验值：" + getExp() + "/" + getExp_max()+"\n");
+		System.out.print("未分配属性点：" + getPoint()+ "\n");
+		System.out.print("金币：" + getGold()+ "\n");
 
 	}
 

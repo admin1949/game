@@ -9,6 +9,7 @@ public class fight {
 	public static game g = new game();//死亡可以选择重新开始 
 	public void fight1(person my,moster mon){
 		System.out.println("你遇到了一只"+mon.getLv()+"的"+mon.getName()+"怪物");
+		mon.show();
 		System.out.println("选择是否战斗：\n1.自动战斗,\t2.手动战斗.\t3.逃跑");
 		mode = in.next();
 		if(mode.equals("1")){
@@ -34,7 +35,9 @@ public class fight {
 		if(my.getHp()<=0){
 			my.setHp(0);
 			my.setIs_alive(0);
-			death();
+		}
+		if(mon.getHp()<0){
+			mon.setHp(0);
 		}
 		System.out.println("***第"+i+"回合***");
 		i++;
@@ -44,6 +47,9 @@ public class fight {
 		System.out.println("怪物当前攻击"+mon.getAtk());
 		if(mon.getHp()<=0){
 			win(my,mon);
+		}
+		else if (my.getIs_alive()==0){
+			death(my);
 		}
 	}
 	
@@ -59,8 +65,26 @@ public class fight {
 		}
 	}
 	
-	private void death(){
-		System.out.println("***你已死亡,请重新开始***");
+	private void death(person my){
+		System.out.println("***你已死亡***\n1.vip-原地复活\n2.重新选择角色\n3.退出游戏");
+		while(true){
+			String chose=in.next();
+			if(chose.equals("1")){
+				System.out.println("***由于您充值了vip，您已近原地复活");
+				my.setHp(my.getHp_max());
+				my.setIs_alive(1);
+				break;
+			}else if(chose.equals("2")){
+				g.start();
+				break;
+			}else if(chose.equals("3")){
+				System.exit(0);
+			}else{
+				System.out.println("你输入的不正确，请重新输入");
+			}
+		}
+		
+		
 		
 	}
 	
@@ -70,7 +94,9 @@ public class fight {
 		my.setExp(my.getExp()-my.getExp_max());
 		my.setExp_max(my.getLv()*50);
 		my.setPoint(my.getPoint()+5);
-		my.init();
+		my.init_person();
+		my.setHp(my.getHp_max());
+		my.setMp(my.getMp_max());
 		my.show();
 	}
 }
