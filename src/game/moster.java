@@ -2,7 +2,7 @@ package game;
 import java.util.Random;
 
 public class moster {
-	private int Grade; //1 普通，2精英，3稀有，4史诗，5传说，0BOSS. 怪物品级
+	private int Grade; //1 普通，2精英，3稀有，4史诗，5传说，6BOSS. 怪物品级
 	private int Hp;// 血量
 	private int Hp_max;/* 血量上限 */
 	private int atk;// 攻击力
@@ -41,13 +41,32 @@ public class moster {
 	}
 	
 	public void init_moster(int map){
-		setAtk((int)((random.nextInt(5)+1)+map*5));
-		setHp_max((int)((random.nextInt(30)+1)+map*30));
-		setMp_max((int)((random.nextInt(5)+1)+map*5));
+		double i = Math.random();
+		if(i<0.5){
+			setGrade(1);
+		}
+		else if(i<0.75){
+			setGrade(2);
+		}
+		else if(i<0.85){
+			setGrade(3);
+		}
+		else if(i<0.92){
+			setGrade(4);
+		}
+		else if(i<0.97){
+			setGrade(5);
+		}
+		else {
+			setGrade(6);
+		}
+		setAtk((random.nextInt(5)+1+map*5)*getGrade());
+		setHp_max((random.nextInt(30)+1+map*30)*getGrade());
+		setMp_max((random.nextInt(5)+1+map*5)*getGrade());
 		setHp(getHp_max());
 		setMp(getMp_max());
 		setIs_alive(1);
-		setGold(map*(random.nextInt(5)+1));
+		setGold(map*(random.nextInt(5)+1)*getGrade());
 		setLv(map);
 	}
 
