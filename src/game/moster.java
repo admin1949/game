@@ -14,7 +14,7 @@ public class moster {
 	private int Spirit;// 体力
 	private int Lv;// 等级
 	private int gold;/* 金币数量 */
-	private String name;// 玩家名字
+	private String name;// 怪物名字
 	private int is_alive;/* 设置存活状态 1活 0死 */
 	private int Exp;//怪物爆的经验
 
@@ -71,7 +71,30 @@ public class moster {
 		setGold(map*(random.nextInt(5)+1)*getGrade());
 		setLv(map);
 		setExp((random.nextInt(10)+1+map*5)*getGrade());
+		setName(re_name(getGrade()));
 		
+	}
+	
+	private String re_name (int Grade){//根据品级返回怪物名
+		String name = null;
+		switch(Grade){
+			case 1:
+				name = "普通";
+			case 2:
+				name = "精英";
+			case 3:
+				name = "稀有";
+			case 4:
+				name = "史诗";
+			case 5:
+				name = "传说";
+			case 6:
+				name = "boss";
+			default:
+				name  = " ";
+		}
+			
+		return name;
 	}
 
 

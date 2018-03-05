@@ -52,26 +52,26 @@ public class person {
 		setPoint(0);//初始化技能点为0
 	}
 	
-	public void init_person(){   //根据属性和职业设定具体属性
+	public void init_person(){   //根据属性和职业和等级设定具体属性
 		if(getPro().equals("法师")){
-			setAtk((int)(getBrain()*2+getPower()*0.2));
-			setHp_max((int)(getSpirit()*10+getBrain()*2));
-			setMp_max((int)(getBrain()*2));
+			setAtk((int)(getBrain()*2+getPower()*0.2)+getLv()*5);
+			setHp_max((int)(getSpirit()*10+getBrain()*2)+getLv()*10);
+			setMp_max((int)(getBrain()*2)+getLv()*10);
 		}
 		else if(getPro().equals("战士")){
-			setAtk((int)(getPower()*2+getQuick()*0.2));
-			setHp_max((int)(getSpirit()*10+getPower()*2));
-			setMp_max((int)(getBrain()*2));
+			setAtk((int)(getPower()*2+getQuick()*0.2)+getLv()*5);
+			setHp_max((int)(getSpirit()*10+getPower()*2)+getLv()*10);
+			setMp_max((int)(getBrain()*2)+getLv()*10);
 		}
 		else if(getPro().equals("盗贼")){
-			setAtk((int)(getQuick()*2+getBrain()*0.2));
-			setHp_max((int)(getSpirit()*10+getQuick()*2));
-			setMp_max((int)(getBrain()*2));
+			setAtk((int)(getQuick()*2+getBrain()*0.2)+getLv()*5);
+			setHp_max((int)(getSpirit()*10+getQuick()*2)+getLv()*10);
+			setMp_max((int)(getBrain()*2)+getLv()*10);
 		}
 		else if(getPro().equals("牧师")){
-			setAtk((int)(getBrain()*2+getQuick()*0.2));
-			setHp_max((int)(getSpirit()*10+getBrain()*2));
-			setMp_max((int)(getBrain()*2));
+			setAtk((int)(getBrain()*2+getQuick()*0.2)+getLv()*5);
+			setHp_max((int)(getSpirit()*10+getBrain()*2)+getLv()*10);
+			setMp_max((int)(getBrain()*2)+getLv()*10);
 		}
 	}
 	
